@@ -1,0 +1,66 @@
+@use "./../../mixins";
+@use "./../../variables" as *;
+
+.jamoa {
+  text-align: center;
+  padding: 220px 0 90px 0;
+  h4 {
+    text-transform: uppercase;
+    color: $glavniy_color;
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  p {
+    font-size: 18px;
+  }
+  &_card {
+    margin: 70px 0 80px 0;
+    @include mixins.flexbox(row, space-between, center, "");
+    .cardlar {
+      width: 240px;
+      height: 260px;
+      border-radius: 7px;
+      border: 1px solid red($color: #000000);
+      box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.248);
+      gap: 20px;
+      padding: 30px;
+      transition:  all 0.3s ease;
+       &:hover{
+        background: linear-gradient(135deg, #ffffff, #74C69D);
+        cursor: pointer;
+
+      }
+      p {
+        color: $black_color;
+        margin: 0;
+      }
+      &__people {
+        width: 30px;
+      }
+    }
+  }
+  &_btn {
+    @include mixins.button;
+  }
+}
+
+@media (max-width: 568px) {
+  .jamoa {
+    padding: 120px 0 90px 0;
+
+    h1 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 18px;
+    }
+    &_card {
+      margin: 70px 0 80px 0;
+      @include mixins.flexbox(column, space-between, center, 20);
+
+    }
+  }
+}

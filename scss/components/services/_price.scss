@@ -1,0 +1,99 @@
+@use "./../../mixins";
+@use "./../../variables" as *;
+
+.price {
+  text-align: center;
+  padding: 70px 0 40px 0;
+  h4 {
+    text-transform: uppercase;
+    color: $glavniy_color;
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  p {
+    font-size: 18px;
+  }
+  &_card {
+    margin: 70px 0 80px 0;
+    @include mixins.flexbox(row, center, center, 70);
+    .cardlar {
+      width: 240px;
+      height: 440px;
+      border-radius: 7px;
+      border: 1px solid red($color: #000000);
+      box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.248);
+      gap: 20px;
+      padding: 30px;
+      transition: all 0.3s ease;
+      &:hover {
+        background: linear-gradient(135deg, #ffffff, #74c69d);
+        cursor: pointer;
+      }
+      h5{
+        margin: 0;
+        font-size: 18px
+      }
+      .narx {
+        @include mixins.flexbox(row, center, center, 5);
+        h1{
+            font-size: 40px;
+            margin: 20px 0;
+        }
+        p{
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+      }
+      .lorem{
+        color: $black_color;
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.4;
+        margin-bottom: 30px;
+      }
+      .succes{
+        @include mixins.flexbox(column, start, start, "");
+        margin-bottom: 20px;
+
+        p{
+            i{
+                color: green;
+                font-size: 18px;
+            }
+            margin: 5px;
+            font-size: 15px;
+        }
+      }
+      &__people {
+        width: 30px;
+      }
+    }
+  }
+  &_btn {
+    @include mixins.button;
+  }
+}
+
+@media (max-width: 568px) {
+  .price {
+    padding: 40px 0 90px 0;
+
+    h1 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 18px;
+    }
+    &_card {
+      margin: 70px 0 10px 0;
+      @include mixins.flexbox(column, space-between, center, 20);
+       .cardlar {
+      width: 300px;
+      height: 440px;
+    }
+    }
+  }
+}

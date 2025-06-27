@@ -1,0 +1,60 @@
+@use "./../../mixins";
+@use "./../../variables" as *;
+
+.header {
+  background-color: $glavniy_color;
+  display: flex;
+
+  .navbar {
+    @include mixins.flexbox(row, space-between, center, "");
+    padding: 10px;
+    .logo {
+      .brend {
+        width: 50px;
+      }
+    }
+    .link {
+      ul {
+        @include mixins.flexbox("", center, center, 40);
+        li {
+          font-size: 18px;
+          font-weight: 600;
+          list-style: none;
+          cursor: pointer;
+          color: $white_color;
+          a {
+            text-decoration: none;
+            color: $white_color;
+          }
+        }
+      }
+    }
+    #menu {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  .header {
+    .navbar {
+      @include mixins.flexbox(row, space-between, center, "");
+      padding: 15px;
+      width: 100%;
+      .logo {
+        .brend {
+          width: 40px;
+        }
+      }
+      .link {
+        display: none;
+      }
+      #menu {
+        display: block;
+        font-size: 26px;
+        font-weight: 600;
+        color: white;
+      }
+    }
+  }
+}

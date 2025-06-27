@@ -1,0 +1,23 @@
+// umumiy stylelar
+@use "./mixins";
+@use "./normal";
+@use "./variables";
+
+// Main section links
+@use "././components/main/navbar";
+@use "./components/main/about";
+@use "./components/main/company";
+@use "./components/main/team";
+@use "./components/main/jamoa";
+@use "./components/main/footer";
+
+// Portfolio section links
+@use './components/portfolio/works';
+
+// Services section links
+@use './components/services/price';
+
+// Contact links
+@use './components/contact/massage'
+
+
