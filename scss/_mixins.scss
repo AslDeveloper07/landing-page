@@ -1,4 +1,8 @@
-@mixin flexbox($colrow, $s_abe, $rcl, $gap) {
+
+
+
+
+@mixin flexbox ( $colrow, $s_abe, $rcl,  $gap){
   display: flex;
   flex-direction: $colrow;
   justify-content: $s_abe;
@@ -6,8 +10,9 @@
   gap: $gap + px;
 }
 
-@mixin button {
+@mixin button(){
   background-color: black;
+
   color: white;
   padding: 10px 30px;
   border: none;
